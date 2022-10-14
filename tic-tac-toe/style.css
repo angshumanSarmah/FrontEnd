@@ -1,0 +1,132 @@
+body {
+  background-color: #ffff2b;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  margin-top: 6rem;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 18px;
+}
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 88%;
+  min-width: 35rem;
+}
+
+.game-controller {
+  width: 12%;
+  min-width: 7rem;
+  padding-left: 3rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.single-container {
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  border: 0px !important;
+}
+
+.x-mark {
+  font-size: 8rem
+}
+
+.o-mark {
+  font-size: 6rem
+}
+
+.single-container:hover {
+  cursor: pointer;
+}
+
+.clicked {
+  background-color: #ffa600;
+}
+
+
+.top :nth-child(1) {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.top :nth-child(2) {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+
+.top :nth-child(3) {
+  border-bottom: 2px solid black;
+}
+
+
+.middle :nth-child(1) {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.middle :nth-child(2) {
+  border-bottom: 2px solid black;
+}
+
+
+.middle :nth-child(3) {
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+
+.bottom :nth-child(1) {
+  border-right: 2px solid black;
+}
+
+.bottom :nth-child(2) {
+  border-right: 2px solid black;
+}
+
+
+.horizontal-line {
+  border: 1px solid black;
+  position: absolute;
+  width: 32rem;
+  background-color: black;
+}
+
+.vertical-line {
+  border: 1px solid black;
+  position: relative;
+  height: 32rem;
+  bottom: 32rem;
+  background-color: black;
+}
+
+.diagonal-line {
+  rotate: 45deg;
+  border: 1px solid black;
+  position: absolute;
+  height: 38rem;
+  background-color: black;
+}

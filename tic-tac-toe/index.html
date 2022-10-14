@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="./script.js" defer></script>
+  <title>Tic Tac Toe</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="game-controller">
+      <div class="mt-1">
+        <span>Current Player:</span>
+        <span id="current-player"></span>
+      </div>
+      <div class="mt-1">
+        <div>Scores</div>
+        <div>
+          <span>Player 1: </span>
+          <span id="player-1-score">0</span>
+        </div>
+
+        <div>
+          <span>Player 2: </span>
+          <span id="player-2-score">0</span>
+        </div>
+      </div>
+      <div class="reset-button mt-1">
+        <button id="resetBoard" onclick="resetBoxes()">Reset Game</button>
+      </div>
+    </div>
+    <div class="game-container">
+
+      <div class="row top">
+        <div class="single-container" id="11"></div>
+        <div class="single-container" id="12"></div>
+        <div class="single-container" id="13"></div>
+      </div>
+      <div class="row middle">
+        <div class="single-container" id="21"></div>
+        <div class="single-container" id="22"></div>
+        <div class="single-container" id="23"></div>
+      </div>
+      <div class="row bottom">
+        <div class="single-container" id="31"></div>
+        <div class="single-container" id="32"></div>
+        <div class="single-container" id="33"></div>
+      </div>
+      <!-- <div class="horizontal-line"> </div>
+        <div class="vertical-line"></div>
+        <div class="diagonal-line"></div> -->
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>
