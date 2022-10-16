@@ -1,20 +1,26 @@
 let interVal;
+let milliSecCounter = 0;
 let secCounter = 0;
 let minuteCounter = 0;
 let hourCounter = 0;
 
-let buttonStop,buttonStart, buttonReset, appendSeconds, appendMinutes, appendHours; 
+let buttonStop,buttonStart, buttonReset, appendMilliSeconds, appendSeconds, appendMinutes, appendHours; 
 
 function start() {
   interVal = setInterval(()=>{
-    secCounter++;
+    milliSecCounter++
+    if(Number(milliSecCounter) === 100) {
+      milliSecCounter = 00;
+      secCounter++;
+      secCounter = appendZero(secCounter);
+      appendSeconds.innerText = secCounter;
+    }
     if(Number(secCounter) === 60) {
       secCounter = 00;
       minuteCounter++;
       minuteCounter = appendZero(minuteCounter);
       appendMinutes.innerText = minuteCounter;
     }
-    
     if(Number(minuteCounter) === 60) {
       minuteCounter = 0;
       hourCounter++;
@@ -23,9 +29,9 @@ function start() {
       appendMinutes.innerText = minuteCounter;
       appendHours.innerText = hourCounter;
     }
-    secCounter = appendZero(secCounter);
-    appendSeconds.innerText = secCounter;
-  }, 1000)
+    milliSecCounter = appendZero(milliSecCounter);
+    appendMilliSeconds.innerText = milliSecCounter;
+  }, 10)
 }
 
 function stop() {
@@ -34,12 +40,14 @@ function stop() {
 
 function reset() {
   stop();
+  milliSecCounter = 0;
   secCounter = 0;
   minuteCounter = 0;
   hourCounter = 0;
   appendHours.innerText = appendZero(hourCounter);
   appendMinutes.innerText = appendZero(minuteCounter);
   appendSeconds.innerText = appendZero(secCounter);
+  appendMilliSeconds.innerText = appendZero(milliSecCounter);
 
 }
 
@@ -51,6 +59,7 @@ function appendZero(value) {
 }
 
 function onLoad() {
+  appendMilliSeconds = document.getElementById('milli-seconds');
   appendSeconds = document.getElementById('seconds');
   appendMinutes = document.getElementById('minutes');
   appendHours = document.getElementById('hours');
