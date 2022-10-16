@@ -4,9 +4,12 @@ let secCounter = 0;
 let minuteCounter = 0;
 let hourCounter = 0;
 
-let buttonStop,buttonStart, buttonReset, appendMilliSeconds, appendSeconds, appendMinutes, appendHours; 
+let buttonStop, buttonStart, buttonReset, appendMilliSeconds, appendSeconds, appendMinutes, appendHours; 
 
 function start() {
+  buttonStart.disabled = true;
+  buttonStop.disabled = false;
+
   interVal = setInterval(()=>{
     milliSecCounter++
     if(Number(milliSecCounter) === 100) {
@@ -32,9 +35,12 @@ function start() {
     milliSecCounter = appendZero(milliSecCounter);
     appendMilliSeconds.innerText = milliSecCounter;
   }, 10)
+
 }
 
 function stop() {
+  buttonStart.disabled = false;
+  buttonStop.disabled = true;
   clearInterval(interVal);
 }
 
@@ -48,7 +54,6 @@ function reset() {
   appendMinutes.innerText = appendZero(minuteCounter);
   appendSeconds.innerText = appendZero(secCounter);
   appendMilliSeconds.innerText = appendZero(milliSecCounter);
-
 }
 
 function appendZero(value) {
