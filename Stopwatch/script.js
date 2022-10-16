@@ -8,14 +8,14 @@ let buttonStop,buttonStart, buttonReset, appendSeconds, appendMinutes, appendHou
 function start() {
   interVal = setInterval(()=>{
     secCounter++;
-    if(Number(secCounter) === 3) {
+    if(Number(secCounter) === 59) {
       secCounter = 00;
       minuteCounter++;
       minuteCounter = appendZero(minuteCounter);
       appendMinutes.innerText = minuteCounter;
     }
     
-    if(Number(minuteCounter) === 2) {
+    if(Number(minuteCounter) === 59) {
       minuteCounter = 0;
       hourCounter++;
       hourCounter = appendZero(hourCounter);
