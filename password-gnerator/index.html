@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="generated-password-container">
+            <input type="text" class="password-field" id="password-field" disabled="true" value="p_@ssw_0rd">
+            <button class="copy-password" id="copy-btn">Copy</button>
+        </div>
+        <form>
+            <div class="form-row mask">
+                <label for="symbols">Mask password</label>
+                <input type="checkbox" id="mask-password">
+            </div>
+            <div class="form-row">
+                <label for="uppercase">Length</label>
+                <input type="range" min="5" max="20" value="15" checked="true" id="length-range">
+                <input type="number" min="5" max="20" value="15" checked="true" class="number-input" id="length-number">
+            </div>
+            <div class="form-row">
+                <label for="uppercase">Uppercase letters</label>
+                <input type="checkbox" checked="true" id="uppercase">
+            </div>
+            <div class="form-row">
+                <label for="number">Numbers</label>
+                <input type="checkbox" checked="true" id="number">
+            </div>
+            <div class="form-row">
+                <label for="symbols">Symbols</label>
+                <input type="checkbox" checked="true" id="symbols">
+            </div>
+
+            <button type="button" class="generate-btn" id="generate-btn">Generate Password</button>
+        </form>
+    </div>
+</body>
+
+</html>
