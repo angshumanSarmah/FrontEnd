@@ -57,10 +57,9 @@ function generatePassword(passwordLength, includeUppercase, includeNumber, inclu
         makeSurePasswordHasAtLeast1FromEachSegment(password, alreadyFilledPositions, passwordLength, generateSymbol);
 
     }
-
     for (let i = 0; i < passwordLength; i++) {
         if (!password[i]) {
-            const randomNumberToPickTypeOfValue = generateRandomNumberInRangeExcludingSome(`0, ${possiblePasswordElements.length - 1}`, alreadyFilledPositions);
+            const randomNumberToPickTypeOfValue = generateRandomNumberInRange(`0,${possiblePasswordElements.length - 1}`);
             password[i] = (possiblePasswordElements[randomNumberToPickTypeOfValue]());
         }
     }
@@ -72,27 +71,24 @@ function generatePassword(passwordLength, includeUppercase, includeNumber, inclu
     EACH selected type in a random position
 */
 function makeSurePasswordHasAtLeast1FromEachSegment(password, alreadyFilledPositions, passwordLength, method) {
-    let randomNumberToPickRandomPosition = generateRandomNumberInRangeExcludingSome(`0, ${passwordLength - 1}`, alreadyFilledPositions);
+    let randomNumberToPickRandomPosition = generateRandomNumberInRangeExcludingSome(`0,${passwordLength - 1}`, alreadyFilledPositions);
     while (!password[randomNumberToPickRandomPosition]) {
-        randomNumberToPickRandomPosition = generateRandomNumberInRangeExcludingSome(`0, ${passwordLength - 1}`, alreadyFilledPositions);
+        randomNumberToPickRandomPosition = generateRandomNumberInRangeExcludingSome(`0,${passwordLength - 1}`, alreadyFilledPositions);
         password[randomNumberToPickRandomPosition] = method();
     }
     alreadyFilledPositions.push(randomNumberToPickRandomPosition);
 }
 
 copyButtonElement.addEventListener('click', () => {
-	const textarea = document.createElement('textarea');
-	const password = generatedPassword.value;	
-	if(!password) { 
+    const textarea = document.createElement('textarea');
+    const password = generatedPassword.value;
+    if (!password) {
         return;
     }
-	textarea.value = password;
-	document.body.appendChild(textarea);
-	textarea.select();
-	document.execCommand('copy');
-	textarea.remove();
-	alert('Password copied to clipboard');
+    textarea.value = password;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert('Password copied to clipboard');
 });
-
-
-
